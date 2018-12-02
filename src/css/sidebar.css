@@ -1,0 +1,29 @@
+#sidebar{
+
+    background-color: #102531;
+    color: #102531;
+
+}
+#sidebar_logo{
+    vertical-align: middle;
+    text-align: center;
+}
+.list-group-item{
+    background-color: #102531;
+    color: #fff;
+
+
+}
+button{
+    border-top: "Raleway", sans-serif;
+    border-top: 1px solid #182e3a;
+    border-bottom: 1px solid #182e3a;
+    background-color: #182e3a;
+    border-left: 0;
+    border-right: 0;
+
+}
+li:hover {
+    background-color:rgb(66, 139, 202);
+    color:yellow;
+}

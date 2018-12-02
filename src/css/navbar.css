@@ -1,0 +1,10 @@
+nav {
+    background-color: rgb(51, 51, 51);
+
+}
+
+nav>ul>li{
+    color: #eee;
+    font-size: 0.9em;
+    padding: 10px 15px;
+}
