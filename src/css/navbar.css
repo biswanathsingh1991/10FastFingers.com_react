@@ -8,3 +8,10 @@ nav>ul>li{
     font-size: 0.9em;
     padding: 10px 15px;
 }
+
+div#joti > #ramo {
+    color: yellow;
+}
+div#jot > span#ramo{
+    color: blue;
+}

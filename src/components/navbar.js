@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import "../css/navbar.css"
-import patreon from "../media/img/patreon.png"
-import Language from "./language"
+import "../css/navbar.css";
+import patreon from "../media/img/patreon.png";
+import Language from "./language";
 
 class Navbar extends Component{
-
     state={        
         language1 : [
             "English", "hindi"
@@ -13,10 +12,9 @@ class Navbar extends Component{
         selected_language : "",
 }
 
-
     render(){
         return(
-            <div>
+            <div >
                 <nav className="navbar  navbar_b navbar-expand">
                     <a href="#" className="navbar-brand"><img src="https://cdn.10fastfingers.com/img/layout/logo%402x.png?1543505005" alt=""/></a>  
                     <ul className="navbar-nav mr-auto">
@@ -27,7 +25,6 @@ class Navbar extends Component{
                         <li className="nav-item">FAQ</li>
                         <li className="nav-item">Supporter</li>
                     </ul>
-                <hr className="bg-danger"/>
                 </nav>
                 <nav className="navbar  navbar_b navbar-expand">
                     <ul className="navbar-nav mr-auto">
