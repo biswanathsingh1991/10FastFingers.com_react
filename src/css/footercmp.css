@@ -1,0 +1,13 @@
+.ftr{
+    background-color: #161C20;
+}
+.ftr-ls{
+    background-color: transparent;
+    color: #2a6496;
+    border: 0;
+}
+.ftr-ls:hover{
+    background-color: #eee;
+    border-radius: 4px;
+
+}

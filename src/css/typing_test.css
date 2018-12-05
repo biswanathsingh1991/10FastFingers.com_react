@@ -12,8 +12,6 @@
     padding: 12px;
     height: 110px ;
     overflow-y : hidden;
-
-
 }
 
 #typing_test--comp > p{
@@ -23,4 +21,13 @@
 }
 div#typing--box > input {
     display: inline-block;
+}
+
+.tkr{
+    background-color: #add5ff;
+    
+
+}
+.tkr > p{
+    color: black;
 }

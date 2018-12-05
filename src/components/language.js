@@ -20,13 +20,11 @@ class Language extends Component{
     selection = (e) =>{
         e.preventDefault();
         e.target.parentElement.previousSibling.innerHTML = "Language " + e.target.innerHTML
-        
     }
     
     render(){
         const lan_list = this.state.language1.map(element=>{
             return(<a href="" className="dropdown-item" onClick={ this.selection } key={element}>{element}</a>);
-
         });
         return(
             <div className="dropdown">
