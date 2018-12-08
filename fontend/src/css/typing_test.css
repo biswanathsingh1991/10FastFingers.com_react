@@ -1,0 +1,45 @@
+.container{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+#typing_test--main_container{
+    background-color: #add5ff;
+}
+
+#typing_test--comp{
+    background-color: #fff;
+    padding: 12px;
+    height: 110px ;
+    overflow-y : hidden;
+}
+
+#typing_test--comp > p{
+    font-size: 2em;
+    color : black;
+    font-weight: bold;
+}
+div#typing--box > input {
+    display: inline-block;
+}
+
+.tkr{
+    background-color: #add5ff;
+    
+
+}
+.tkr > p{
+    color: black;
+}
+
+.tkr >h3{
+    color: #E97001;
+    font-variant:  small-caps;
+    border-bottom: 1px solid #FDA150;
+    font-size: 24px;
+    margin-top:20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.1;
+    font-family: Arial, Helvetica, sans-serif;
+}
