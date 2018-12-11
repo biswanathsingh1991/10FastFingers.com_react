@@ -14,7 +14,7 @@ class Typebox extends Component{
                     </div>
                         <div id="ktr">
                         <div id="timer" >1:00</div>
-                            <button class="fas fa-sync-alt " id="logo"></button>
+                            <button className="fas fa-sync-alt " id="logo"></button>
                         </div>
                     
                 </div>
