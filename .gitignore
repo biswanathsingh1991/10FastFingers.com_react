@@ -25,4 +25,4 @@
 # database
 /backend/db.sqlite3
 
-
+/backend/backend/__pycache__
