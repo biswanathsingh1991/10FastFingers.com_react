@@ -1,7 +1,8 @@
 const initState ={
   highsocre : [
-    {topranking : true},
-    {tasktane : false}
+    {topranking : false},
+    {tasktane : true},
+    {globalchallage: false},
 
   ]
 }

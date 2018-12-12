@@ -5,7 +5,7 @@ class Topranking extends Component{
 
   render(){
     return(
-      <table class="table topranking">
+      <table className="table topranking">
         <thead>
           <tr>
             <th scope="col"></th>
@@ -19,9 +19,9 @@ class Topranking extends Component{
           <tr>
               <th scope="row">1</th>
               <tb>biswanath</tb>
-              <td class="user-img"> hi</td>
-              <td class="wpm">wpm</td>
-              <td class="ago">ii</td>
+              <td className="user-img"> hi</td>
+              <td className="wpm">wpm</td>
+              <td className="ago">ii</td>
           </tr>
         </tbody>
       </table>
@@ -34,7 +34,7 @@ class Tasktaken extends Component{
 
   render(){
     return(
-      <table class="table topranking">
+      <table className="table topranking">
         <thead>
           <tr>
             <th scope="col"></th>
@@ -47,10 +47,10 @@ class Tasktaken extends Component{
         <tbody>
           <tr>
               <th scope="row">1</th>
-              <tb></tb>
-              <td class="user-img">Exterminator</td>
-              <td class="wpm">206</td>
-              <td class="ago">107823</td>
+              <td></td>
+              <td className="user-img">Exterminator</td>
+              <td className="wpm">206</td>
+              <td className="ago">107823</td>
           </tr>
         </tbody>
       </table>
@@ -59,26 +59,37 @@ class Tasktaken extends Component{
 }
 
 
+
 class Highsocrebox extends Component{
 
-  state ={
-    topranking : true,
-    tasktane : false
-  }
+  
+  highScoreBoxChange = (e) => {
+    console.log(e);
+    const [topranking, tasktane, globalchallage] = this.props.highsocre;
+    
+    if (topranking.topranking){
+      return(<Topranking  />);
+    }
+    else if(tasktane.tasktane){
+      return(<Tasktaken />)
+    }
 
+    
+    
+  
+  }
   render(){
-    console.log(this.porps)
     return(
       <div >
         <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
           <div className="btn-group " role="group">
-              <button type="button" className="btn"><i class="fas fa-signal icn"></i></button>
-              <button type="button" className="btn"><i class="fas fa-align-justify"></i></button>
-              <button type="button" className="btn"><i class="fas fa-globe-asia"></i></button>
+              <button type="button" onClick={this.highScoreBoxChange} className="btn"><i className="fas fa-signal icn"></i></button>
+              <button type="button" onClick={this.highScoreBoxChange} className="btn"><i className="fas fa-align-justify"></i></button>
+              <button type="button" onClick={this.highScoreBoxChange} className="btn"><i className="fas fa-globe-asia"></i></button>
             </div>
         </div>
         {this.props.children}
-        <div className="bg-white"><Tasktaken /></div>
+        <div className="bg-white">{ this.highScoreBoxChange() }</div>
         
       </div>
     );
