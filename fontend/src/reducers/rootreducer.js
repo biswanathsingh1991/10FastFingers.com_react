@@ -1,14 +1,16 @@
 const initState ={
-  highsocre : [
-    {topranking : false},
-    {tasktane : true},
-    {globalchallage: false},
-
-  ]
+  highscoreactivatebox : "topranking"
+    
 }
 
 
 const rootreducer = (state=initState, action) => {
+  if (action.type === "updatebox"){
+    return{
+      ...state,
+      highscoreactivatebox: action.activateStatus
+    }
+  }
   return state;
 }
 

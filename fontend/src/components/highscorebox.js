@@ -18,7 +18,7 @@ class Topranking extends Component{
         <tbody>
           <tr>
               <th scope="row">1</th>
-              <tb>biswanath</tb>
+              <td>biswanath</td>
               <td className="user-img"> hi</td>
               <td className="wpm">wpm</td>
               <td className="ago">ii</td>
@@ -80,7 +80,6 @@ class Globalchallange extends Component{
           </tr>
         </tbody>
       </table>
-
     );
   }
 }
@@ -88,38 +87,22 @@ class Globalchallange extends Component{
 
 class Highsocrebox extends Component{
 
-  
-  boxselect = (e) => {
-    const [topranking, tasktane, globalchallage] = this.props.highsocre;
-    if (e.target.value == "topranking"){
-      topranking.topranking = true;
-      tasktane.tasktane = false;
-      globalchallage.globalchallage = false;
-    }else if(e.target.value == "tasktane"){
-      topranking.topranking = false;
-      tasktane.tasktane = true;
-      globalchallage.globalchallage = false;
-    }else if(e.target.value == "globalchallage"){
-      topranking.topranking = false;
-      tasktane.tasktane = false;
-      globalchallage.globalchallage = true;
-    }
+  boxselect = (e) =>{
+    this.props.updateScoreBox(e.target.value);
   }
 
   highsocreboxcmp = () => {
-    const [topranking, tasktane, globalchallage] = this.props.highsocre;
-    if(globalchallage.globalchallage){
+    let highscore = this.props.highscore
+    if(highscore === "globalchallage"){
       return(<Globalchallange />);
-    }else if(tasktane.tasktane){
+    }else if(highscore === "tasktane"){
       return(<Tasktaken />);
     }else{
       return(<Topranking />);
     }
   }
 
-
   render(){
-    console.log(this.props.highscore);
     return(
       <div >
         <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
@@ -127,11 +110,10 @@ class Highsocrebox extends Component{
               <button type="button" onClick={this.boxselect} value="topranking" className="btn"><i className="fas fa-signal icn"></i></button>
               <button type="button" onClick={this.boxselect} value="tasktane" className="btn"><i className="fas fa-align-justify"></i></button>
               <button type="button" onClick={this.boxselect} value="globalchallage" className="btn"><i className="fas fa-globe-asia"></i></button>
-            </div>
+          </div>
         </div>
         {this.props.children}
         <div className="bg-white">{this.highsocreboxcmp()}</div>
-        
       </div>
     );
   }
@@ -139,13 +121,19 @@ class Highsocrebox extends Component{
 
 const mapStateToProps = (state) =>{
   return{
-    highsocre: state.highsocre
+    highscore: state.highscoreactivatebox
   }
+}
 
+const mapDispatchToProps= (dispatch) => {
+  
+  return{
+    updateScoreBox : (activateStatus) =>{dispatch({type:"updatebox", activateStatus: activateStatus})}
+  }
 }
 
 
-export default connect(mapStateToProps)(Highsocrebox);
+export default connect(mapStateToProps, mapDispatchToProps)(Highsocrebox);
 
 export {
   Topranking
