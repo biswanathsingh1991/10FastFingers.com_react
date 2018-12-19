@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import "../css/typingbox.css"
+import "../css/typingbox.css";
+import {connect} from 'react-redux';
 
 
 class Typebox extends Component{
@@ -10,7 +11,7 @@ class Typebox extends Component{
             <div id="type--box">
                 <div id="cnt">
                     <div id="cnt-1">
-                        <input type="text" className="form-control  " />
+                        <input type="text" className="form-control" />
                     </div>
                         <div id="ktr">
                         <div id="timer" >1:00</div>
@@ -24,4 +25,4 @@ class Typebox extends Component{
     }
 }
 
-export default Typebox;
+export default connect()(Typebox);

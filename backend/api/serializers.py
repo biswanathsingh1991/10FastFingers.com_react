@@ -5,5 +5,5 @@ from .models import TestModel
 class TestModelSerializer(ModelSerializer):
 
     class Meta:
-        models = TestModel
+        model = TestModel
         fields = "__all__"

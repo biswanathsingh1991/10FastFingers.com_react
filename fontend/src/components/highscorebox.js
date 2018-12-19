@@ -84,7 +84,6 @@ class Globalchallange extends Component{
   }
 }
 
-
 class Highsocrebox extends Component{
 
   boxselect = (e) =>{
@@ -121,20 +120,18 @@ class Highsocrebox extends Component{
 
 const mapStateToProps = (state) =>{
   return{
-    highscore: state.highscoreactivatebox
   }
 }
 
 const mapDispatchToProps= (dispatch) => {
   
   return{
-    updateScoreBox : (activateStatus) =>{dispatch({type:"updatebox", activateStatus: activateStatus})}
+    updateScoreBox : (activateStatus) =>dispatch({type:"updatebox", activateStatus: activateStatus})
   }
 }
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(Highsocrebox);
-
 export {
   Topranking
 }
