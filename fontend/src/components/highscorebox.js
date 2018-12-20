@@ -12,7 +12,7 @@ class Topranking extends Component{
             <th scope="col"></th>
             <th scope="col">username</th>
             <th scope="col">WPM</th>
-            <th scope="col">ago</th>
+            <th scope="col">th</th>
           </tr>
         </thead>
         <tbody>
@@ -120,6 +120,7 @@ class Highsocrebox extends Component{
 
 const mapStateToProps = (state) =>{
   return{
+    highscore : state.highscoreboxstatus
   }
 }
 

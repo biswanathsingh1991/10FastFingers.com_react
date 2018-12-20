@@ -18,16 +18,14 @@ const reciveTxt = (txt) =>{
 }
 
 const fetchTxt= () =>{
-
-  return (dispatch) =>{
+  return function(dispatch){
     dispatch(requestTxt())
     return fetch('http://127.0.0.1:8000/api/txt')
-    .then(response => response.json())
-    .then(json => console.log(json))
-  
+    .then(response => response.json(), error => console.log("Network error"))
+    .then(json => dispatch(reciveTxt(json)))
   }
-  
 }
+
 
 export{
   fetchTxt,

@@ -4,7 +4,6 @@ const initState ={
   highscoreactivatebox : "topranking"
 }
 
-
 const highscoreboxstatus = (state=initState, action) => {
   if (action.type === "updatebox"){
     return{
@@ -14,7 +13,6 @@ const highscoreboxstatus = (state=initState, action) => {
   }
   return state;
 }
-
 
 const containerTxt = (state=0, action) =>{
   switch(action.type){
@@ -26,17 +24,30 @@ const containerTxt = (state=0, action) =>{
     case "reciveTxt":
       return{
         ...state,
-        containerTxt_recive: true
+        containerTxt_recive: true,
+        txt : action.txt,
       }
     default: return state
   }
+}
 
+const timerInitReducer= (state=0,action) =>{
+  switch(action.type){
+    case "timerinit":
+    return{
+      ...state,
+      init_timer: 60
+    }
+    default:
+    return state
+  }
 }
 
 
 const rootreducer = combineReducers({
   highscoreboxstatus,
-  containerTxt
+  containerTxt,
+  timerInitReducer,
 })
 
 

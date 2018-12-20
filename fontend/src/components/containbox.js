@@ -11,10 +11,10 @@ class Containbox extends Component{
   }
 
   render(){
+    let txt_to_type = this.props.txt14 ? this.props.txt14.txt2 : null;
     return(
       <div id= { this.props.contain_class }>
-        <p>{this.state.test_contain}</p> 
-
+        <p>{txt_to_type}</p> 
     </div>
     );
   }
@@ -22,6 +22,7 @@ class Containbox extends Component{
 
 const mapStateToProps = (state) =>{
   return {
+    txt14 : state.containerTxt.txt
   }
 }
 
