@@ -31,23 +31,26 @@ const containerTxt = (state=0, action) =>{
   }
 }
 
-const timerInitReducer= (state=0,action) =>{
+const typingTimer = (state={time:60, timer_display:false},action) =>{
   switch(action.type){
-    case "timerinit":
+    case "typingTimer":
     return{
       ...state,
-      init_timer: 60
+      time : state.time -1
     }
-    default:
-    return state
+    case "show_display" :
+    return{
+      ...state,
+      timer_display: true
+    }
+    default: return state
   }
 }
-
 
 const rootreducer = combineReducers({
   highscoreboxstatus,
   containerTxt,
-  timerInitReducer,
+  typingTimer,
 })
 
 

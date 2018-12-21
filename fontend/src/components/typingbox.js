@@ -1,29 +1,20 @@
 import React, { Component } from 'react';
 import "../css/typingbox.css";
 import {connect} from 'react-redux';
-import {timerInit} from '../action';
+import TypingTimer from './counter'
+
+
+
 
 class Typebox extends Component{
   
-  constructor(props){
-    super(props);
-    this.props.timerinit()
-
-  }
-
-  // componentDidMount(){
-  //   this.props.timerinit()
-  // }
-
   render(){
-    let k = this.props.init_timer ? this.props.init_timer : null;
-    console.log(k)
     return(
       <div id="type--box">
         <div id="cnt">
-          <div id="cnt-1"><input type="text" className="form-control" /></div>
+          <div id="cnt-1"><input type="text" className="form-control" onChange={this.props.show_display}/></div>
           <div id="ktr">
-            <div id="timer" >1{this.props.init_timer}</div>
+            <div id="timer" >{ this.props.timer_display ? <TypingTimer /> : "1:00" }</div>
             <button className="fas fa-sync-alt " id="logo"></button>
           </div>
         </div>
@@ -34,13 +25,13 @@ class Typebox extends Component{
 
 const mapStateToProps = (state) =>{
   return{
-    init_timer : state.init_timer
+    timer_display: state.typingTimer.timer_display
   }
 }
 
 const mapDispatchToProps = (dispatch) =>{
   return{
-    timerinit : () => dispatch({type:"timerinit"})
+    show_display: () => dispatch({type:"show_display"})
   }
 }
 

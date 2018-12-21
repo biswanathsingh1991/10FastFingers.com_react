@@ -120,7 +120,7 @@ class Highsocrebox extends Component{
 
 const mapStateToProps = (state) =>{
   return{
-    highscore : state.highscoreboxstatus
+    highscore : state.highscoreboxstatus.highscoreactivatebox
   }
 }
 
