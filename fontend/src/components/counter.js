@@ -15,7 +15,6 @@ class TypingTimer extends Component{
 
   render(){
 
-    console.log(typeof this.props.typingTimerValue)
     return(
       <div>{this.props.typingTimerValue}</div>
     );

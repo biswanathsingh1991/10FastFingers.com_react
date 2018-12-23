@@ -47,10 +47,36 @@ const typingTimer = (state={time:60, timer_display:false},action) =>{
   }
 }
 
+const typingBoxInputTrackInitState = {
+  input_space: false,
+  previous_string: "",
+  current_string: "",
+}
+
+const typingBoxInputTrack = (state=typingBoxInputTrackInitState , action) =>{
+  switch(action.type){
+    case "Input space":
+    return{
+      ...state,
+      input_space: true,
+      current_string: "",
+    }
+    case "Input value":
+    return{
+      ...state,
+      input_space: false,
+      previous_string: state.current_string,
+      current_string: action.data,
+    }
+    default: return state
+  }
+}
+
 const rootreducer = combineReducers({
   highscoreboxstatus,
   containerTxt,
   typingTimer,
+  typingBoxInputTrack,
 })
 
 

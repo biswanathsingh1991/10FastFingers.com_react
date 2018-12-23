@@ -19,6 +19,10 @@
     color : black;
     font-weight: bold;
 }
+#typing_test--comp > p > span{
+    padding-right: 5px;
+    display: inline-block;
+}
 div#typing--box > input {
     display: inline-block;
 }
