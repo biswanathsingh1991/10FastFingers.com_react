@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {fetchTxt} from '../action';
 
+
+const handelUndefine = (t, func) => {
+  let txt_to_type = t ? func(t.txt2) : null;
+  return (txt_to_type)
+
+}
+
 class Containbox extends Component{
-  
+ 
   componentDidMount(){
     this.props.TxtFatch()
   }
@@ -29,6 +36,8 @@ class Containbox extends Component{
     return(
       <div id= { this.props.contain_class }>
         <p>{this.typingText()}</p>
+        {/* <p>{()=>handelUndefine(this.props.txt14, this.typingTextYesCondition) }</p> */}
+
       </div>
     );
   }

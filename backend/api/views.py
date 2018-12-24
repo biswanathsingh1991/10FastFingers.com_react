@@ -30,6 +30,6 @@ class ParagraphText(APIView):
 
     def get(self, request):
         file_list = os.listdir("./txt")
-        txt = open("./txt/" + file_list[1], "r").read()
+        txt = open("./txt/" + file_list[2], "r").read()
         txt1 = {"txt2": txt}
         return JsonResponse(data=txt1)
