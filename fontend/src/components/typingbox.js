@@ -8,36 +8,37 @@ import TypingTimer from './counter'
 
 class Typebox extends Component{
 
-  constructor(){
-    super()
-    // this.state.txt_array = this.props.container_string.txt2.split(" ")
-    // this.state.t ="working"
-  }
-
 
   typeboxInputOnChange = (e) =>{
     let input_key = e.key;
     if (input_key===" "){
       this.props.typeboxInputSpace();
-      // if (this.state.text_array[need_to_type_string_index]===this.props.current_string){
-      //   this.props.string_match();
-      // }else{
-      //   this.props.string_match();
-      // }
+      if (this.props.containerTxt_array[this.props.need_to_type_string_index]===this.props.current_string){
+        this.props.string_match(this.props.containerTxt_array[this.props.need_to_type_string_index]);
+      }else{
+        this.props.reset_string_match(this.props.containerTxt_array[this.props.need_to_type_string_index])
+      }
+      this.props.need_to_type_string_index_update();
       e.target.value = "";
     }else{
       this.props.typeboxInputString(input_key);
     }
   }
+
+  wordMatch = (e) =>{
+    let container_string_array = this.props.container_string.txt2.split(" ");
+    this.props.sotreContainerTxtAsarray(container_string_array);
+  }
+
+  
   
   render(){
-    // console.log(this.props.container_string)
     return(
       <div id="type--box">
         <div id="cnt">
           <div id="cnt-1">
             <input type="text" className="form-control" onKeyPress={this.typeboxInputOnChange} 
-            onInput={this.props.show_display} />
+            onInput={this.props.show_display} onFocus={this.wordMatch} />
           </div>
           <div id="ktr">
             <div id="timer" >{ this.props.timer_display ? <TypingTimer /> : "1:00" }</div>
@@ -56,6 +57,7 @@ const mapStateToProps = (state) =>{
     current_string: state.typingBoxInputTrack.current_string,
     container_string : state.containerTxt.txt,
     need_to_type_string_index: state.typingBoxInputTrack.need_to_type_string_index,
+    containerTxt_array: state.typingBoxInputTrack.containerTxt_array,
   }
 }
 
@@ -65,8 +67,10 @@ const mapDispatchToProps = (dispatch) =>{
     typeboxInputString: (input_key) => dispatch({
       type:"Input value", data: input_key }),
     typeboxInputSpace: () => dispatch({type: "Input space"}),
-    // WordNeedToType: () => dispatch({type:})
-    string_match: () => dispatch({type: "matche"}),
+    string_match: (key) => dispatch({type: "matche", data: key}),
+    sotreContainerTxtAsarray: (arrayData) => dispatch({type:"covert to array", data: arrayData }),
+    need_to_type_string_index_update: () => dispatch({type: "update index"}),
+    reset_string_match: (key) => dispatch({type: "not matche", data:key})
   }
 }
 

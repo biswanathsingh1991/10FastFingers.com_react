@@ -18,7 +18,11 @@ class Containbox extends Component{
   typingTextYesCondition = (ip) =>{
     let ip_array = ip.split(" ");
     let new_ip_array = ip_array.map(u => {
-      return(<span key={u- ip_array.indexOf(u)}>{u}</span>);
+      return(
+      <span key={u} className={this.props.class_highlight[u]}>
+        {u}
+      </span>
+      );
     });
     return new_ip_array
   }
@@ -36,8 +40,6 @@ class Containbox extends Component{
     return(
       <div id= { this.props.contain_class }>
         <p>{this.typingText()}</p>
-        {/* <p>{()=>handelUndefine(this.props.txt14, this.typingTextYesCondition) }</p> */}
-
       </div>
     );
   }
@@ -45,7 +47,8 @@ class Containbox extends Component{
 
 const mapStateToProps = (state) =>{
   return {
-    txt14 : state.containerTxt.txt
+    txt14 : state.containerTxt.txt,
+    class_highlight: state.typingBoxInputTrack.class_highlight,
   }
 }
 

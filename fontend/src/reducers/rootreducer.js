@@ -55,6 +55,8 @@ const typingBoxInputTrackInitState = {
   current_string_correct: false,
   typed_string_correct: 0,
   typed_not_string_correct: 0,
+  containerTxt_array: [],
+  class_highlight:{},
 }
 
 const typingBoxInputTrack = (state=typingBoxInputTrackInitState , action) =>{
@@ -76,9 +78,35 @@ const typingBoxInputTrack = (state=typingBoxInputTrackInitState , action) =>{
     return{
       ...state,
       current_string_correct: true,
-      typed_string_correct: 0+ state.typed_string_correct,
-      
+      typed_string_correct: ++state.typed_string_correct,
+      class_highlight: {
+        ...state.class_highlight,
+        [action.data]: "bg-success"
+      }
     }
+    case "covert to array":
+    return{
+      ...state,
+      containerTxt_array: action.data,
+    }
+    case "update index":
+    return{
+      ...state,
+      need_to_type_string_index: ++state.need_to_type_string_index ,
+    }
+    case "not matche":
+    return{
+      ...state,
+      typed_not_string_correct: ++state.typed_not_string_correct,
+      // class_highlight_array: state.class_highlight_array[state.need_to_type_string_index]="red"
+      // class_highlight_array: state.class_highlight_array.push("red")
+      class_highlight: {
+        ...state.class_highlight,
+        [action.data]: "bg-danger"
+      }
+
+    }
+
     default: return state
   }
 }
