@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {fetchTxt} from '../action';
+// import "../css/containbox.css"
 
-
-const handelUndefine = (t, func) => {
-  let txt_to_type = t ? func(t.txt2) : null;
-  return (txt_to_type)
-
-}
 
 class Containbox extends Component{
  
@@ -19,7 +14,7 @@ class Containbox extends Component{
     let ip_array = ip.split(" ");
     let new_ip_array = ip_array.map(u => {
       return(
-      <span key={u} className={this.props.class_highlight[u]}>
+      <span key={u} className={this.props.class_highlight[u] }> 
         {u}
       </span>
       );

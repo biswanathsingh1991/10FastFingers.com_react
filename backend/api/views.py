@@ -5,23 +5,14 @@ from .models import TestModel
 from rest_framework.views import APIView
 from django.http.response import JsonResponse
 import os
-from rest_framework.decorators import api_view
-from rest_framework.response import Response
+from rest_framework.generics import CreateAPIView
+from .serializers import UserModelSerializer
 
 
 class TestModelListView(ListAPIView):
 
     serializer_class = TestModelSerializer
     queryset = TestModel.objects.all()
-
-
-# def paragraphText(request):
-#     if request.method == 'GET':
-#         file_list = os.listdir("./txt")
-#         print(file_list)
-#         txt = open("./txt/" + file_list[1], "r").readlines()
-#         txt = {"txt": txt}
-#         return JsonResponse(data=txt)
 
 
 class ParagraphText(APIView):
@@ -33,3 +24,8 @@ class ParagraphText(APIView):
         txt = open("./txt/" + file_list[2], "r").read()
         txt1 = {"txt2": txt}
         return JsonResponse(data=txt1)
+
+
+class SingUpView(CreateAPIView):
+    serializer_class = UserModelSerializer
+    permission_classes = []

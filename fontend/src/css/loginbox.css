@@ -1,0 +1,24 @@
+#loginbox{
+  background-color: white;  
+  color: black;
+}
+
+#loginbox-socal > li{
+  margin-bottom: 10px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;  
+}
+#loginbox-form > label{
+  background-color: white;
+  color: black;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+}
+
+#loginbox-form > label{
+  color: black;
+}

@@ -17,10 +17,15 @@ class Navlink extends Component{
                 <li className="list-group-item"><strong>Text Practice</strong> <br/> <small>Practice your own text</small></li>
                 <li className="list-group-item"><strong>Top 1000</strong><br/> <small>Challenge yourself</small></li>
                 </ul>
-
         );
     }
 }
 
+class Navlink2 extends Navlink{}
+
+
 export default Navlink;
 
+export {
+    Navlink2
+}

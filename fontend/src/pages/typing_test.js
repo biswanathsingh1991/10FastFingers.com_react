@@ -18,10 +18,13 @@ class Typingtest extends Component{
     return(
       <div id="typing_test--main_container" >
         <Navbar />
-          <div className="container-fluid ">
+          <div className="container-fluid">
             <div className="row ">
               <div className="col-2" >
                 <Navlink props={this.state.navlink} />
+                <a href="/login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+                  login
+                </a>
               </div>
               <div className="col-7">
                 <Containbox contain_class = {this.state.contain_class} />

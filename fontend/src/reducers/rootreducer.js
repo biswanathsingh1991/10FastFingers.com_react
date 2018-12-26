@@ -81,7 +81,7 @@ const typingBoxInputTrack = (state=typingBoxInputTrackInitState , action) =>{
       typed_string_correct: ++state.typed_string_correct,
       class_highlight: {
         ...state.class_highlight,
-        [action.data]: "bg-success"
+        [action.data]: "text-success"
       }
     }
     case "covert to array":
@@ -102,7 +102,7 @@ const typingBoxInputTrack = (state=typingBoxInputTrackInitState , action) =>{
       // class_highlight_array: state.class_highlight_array.push("red")
       class_highlight: {
         ...state.class_highlight,
-        [action.data]: "bg-danger"
+        [action.data]: "text-danger"
       }
 
     }
