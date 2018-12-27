@@ -7,3 +7,21 @@
 
 
 /* --------------------------------------------------------- */
+
+
+
+/* profile page style */
+
+#profilepage{
+  background-color: #8bd2ff;
+}
+#profilepage-user-display{
+  background-color: white;
+}
+#propic-sidetxt{
+  float: left;
+}
+.lock-icon > i{
+  padding: 10px;
+}
+/* ------------------------------------------------------------- */
