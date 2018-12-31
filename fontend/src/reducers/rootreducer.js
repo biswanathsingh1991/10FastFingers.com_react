@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux'
+import loginreducer from "./loginreducer"
+
 
 const initState ={
   highscoreactivatebox : "topranking"
@@ -98,8 +100,6 @@ const typingBoxInputTrack = (state=typingBoxInputTrackInitState , action) =>{
     return{
       ...state,
       typed_not_string_correct: ++state.typed_not_string_correct,
-      // class_highlight_array: state.class_highlight_array[state.need_to_type_string_index]="red"
-      // class_highlight_array: state.class_highlight_array.push("red")
       class_highlight: {
         ...state.class_highlight,
         [action.data]: "text-danger"
@@ -116,6 +116,7 @@ const rootreducer = combineReducers({
   containerTxt,
   typingTimer,
   typingBoxInputTrack,
+  loginreducer,
 })
 
 
