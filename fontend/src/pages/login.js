@@ -16,7 +16,7 @@ class Login extends Component{
           <div className="row">
             <div className="col-2">
               <Navlink2 />
-              <a href="/login" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+              <a href="/login" className="btn btn-primary btn-lg active" role="button" aria-pressed="true">
                 login
               </a>
             </div>

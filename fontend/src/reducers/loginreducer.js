@@ -1,8 +1,9 @@
 
 const init ={
   username: "",
-  password: ""
-}
+  password: "",
+  key: "",
+} 
 
 const loginreducer = (state=init, action) =>{
   switch (action.type){
@@ -16,8 +17,14 @@ const loginreducer = (state=init, action) =>{
         ...state,
         password: action.payload
       }
+    case "authKey":
+      return{
+        ...state,
+        key:action.payload
+      }
 
     default: return state;
+
   }
 }
 

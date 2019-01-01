@@ -1,4 +1,5 @@
 import fetch from 'cross-fetch';  
+import axios from 'axios';
 
 const requestTxt = () =>{
   return{
@@ -33,24 +34,39 @@ const authCredential = () =>{
 const authKey = (key) =>{
   return{
     type : "authKey",
-    key: key
+    payload: key
   }
 }
 
 
-const authentication = (state) =>{
-  let username = state.loginreducer.username;
-  let password = state.loginreducer.password;
+const authentication = (username, password) =>{
   return function(dispatch){
-    dispatch(authCredential(state.loginreducer.username, state.loginreducer.username))
-    return fetch("http://127.0.0.1:8000/api/rest-auth/login",{
-      method: 'POST',
-      body: {
-        username ,
-        password
+    dispatch(authCredential(username, password));
+    return axios({
+      method: 'post',
+      url: "http://127.0.0.1:8000/api/rest-auth/login/",  
+      data: {
+        username: username,
+        password: password
+      },
+      headers: {
+          "Content-Type": 'application/json' ,
       }
-    })
-    .then(res=>dispatch(authKey(res)))
+    }
+    ).then(res => dispatch(authKey(res.data.key)))
+    // return fetch("http://127.0.0.1:8000/api/rest-auth/login/",{
+    //   method: 'POST',
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: { 
+    //     username ,
+    //     password
+    //   }
+    // })
+    // .then(res=>console.log(res))
+    // .then(res=>dispatch(authKey(res)))
   }
 } 
 
