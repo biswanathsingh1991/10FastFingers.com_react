@@ -61,9 +61,9 @@ class Loginbox extends Component{
             <input className="form-control" type="text" placeholder="Email"
             required="required" maxLength="60" id="UserEmail"
             onBlur={ this.captureEmail }/>
-            <label htmlFor="UserPassword">Password</label>
-            <input className="form-control" type="text"
-            required="required" maxLength="60" id="UserPassword"
+            <label htmlFor="password">Password</label>
+            <input className="form-control" type="password"
+            required="required" maxLength="60" id="password"
             onBlur={ this.capturePassword }/>
             <button type="submit" className="btn btn-info btn-block" >
               login

@@ -11,5 +11,4 @@ urlpatterns = [
     # path('/txt', paragraphText, name="txt"),
     path('txt', ParagraphText.as_view(), name="txt"),
     path('singup', SingUpView.as_view(), name="singup"),
-    re_path(r'^rest-auth/', include('rest_auth.urls')),
 ]

@@ -44,7 +44,7 @@ const authentication = (username, password) =>{
     dispatch(authCredential(username, password));
     return axios({
       method: 'post',
-      url: "http://127.0.0.1:8000/api/rest-auth/login/",  
+      url: "http://127.0.0.1:8000/rest-auth/login/",  
       data: {
         username: username,
         password: password
