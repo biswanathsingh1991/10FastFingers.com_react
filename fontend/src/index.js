@@ -8,6 +8,7 @@ import {Provider} from 'react-redux';
 import {rootreducer} from "./reducers/rootreducer";
 import thunk from 'redux-thunk';
 
+
 const preloadState = {
   // timerInitReducer: 60,
   name : "biswanath singh"
