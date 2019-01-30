@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import "../css/loginbox.css";
 import {connect} from 'react-redux';
 import {authentication} from '../action';
+import {Redirect} from 'react-router-dom';
 
 class Loginbox extends Component{
 
@@ -18,7 +19,13 @@ class Loginbox extends Component{
 
   handelSubmit = (e, state) =>{
     e.preventDefault(); 
-    this.props.authentication(this.props.username, this.props.password)
+    this.props.authentication(this.props.username, this.props.password);
+    // if(this.props.key){
+    //   <Redirect to={{
+    //     pathname: "/profile",
+    //   }} 
+    //   />
+    // }
     
   }
 
@@ -88,6 +95,7 @@ const mapStateToProps = (state) =>{
   return{
     username: state.loginreducer.username,
     password: state.loginreducer.password,
+    key: state.loginreducer.key,
 
   }
 }
