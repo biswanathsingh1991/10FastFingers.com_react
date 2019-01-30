@@ -7,6 +7,8 @@ from django.http.response import JsonResponse
 import os
 from rest_framework.generics import CreateAPIView
 from .serializers import UserModelSerializer
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
 
 
 class TestModelListView(ListAPIView):
@@ -29,3 +31,8 @@ class ParagraphText(APIView):
 class SingUpView(CreateAPIView):
     serializer_class = UserModelSerializer
     permission_classes = []
+
+
+@api_view(['GET'])
+def userid(request):
+    return Response(request.user.id)

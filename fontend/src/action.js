@@ -54,19 +54,6 @@ const authentication = (username, password) =>{
       }
     }
     ).then(res => dispatch(authKey(res.data.key)))
-    // return fetch("http://127.0.0.1:8000/api/rest-auth/login/",{
-    //   method: 'POST',
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: { 
-    //     username ,
-    //     password
-    //   }
-    // })
-    // .then(res=>console.log(res))
-    // .then(res=>dispatch(authKey(res)))
   }
 } 
 
